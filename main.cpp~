@@ -2,7 +2,7 @@
 #include"enemy.h"
 int main() {
 World plot;
-plot.Update();
+plot.Refresh();
 //World * pWorld = &plot;
 //pWorld->Draw();
 //World object;

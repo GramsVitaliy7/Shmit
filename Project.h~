@@ -29,7 +29,6 @@ private:
 	
 	void PutSymbol( int iX, int iY, char iSymbol );
 
-private:
 	std::vector < std::vector< char > > m_table;
 	std::vector < Enemy > m_enemy;
 };

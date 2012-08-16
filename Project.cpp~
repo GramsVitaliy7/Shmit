@@ -27,7 +27,6 @@ void World::Update()
 	char symbol = m_enemy[i].GetSymbol();	
 	this->PutSymbol( x, y, symbol ); // в ячейку с координатами положить символ
 	}
-	this->Draw();
 }
 
 void World::PutSymbol( int iX, int iY, char iSymbol )
