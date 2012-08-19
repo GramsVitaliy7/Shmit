@@ -4,7 +4,8 @@
 #include<vector>
 #include<iostream>
 
-#include"enemy.h"
+#include "enemy.h"
+#include "Bullet.h"
 
 class World
 {
@@ -25,12 +26,13 @@ private:
 			}
 			std::cout<<std::endl;
 		}
+		
 	}
 	
 	void PutSymbol( int iX, int iY, char iSymbol );
-
 private:
-	std::vector < std::vector< char > > m_table;
-	std::vector < Enemy > m_enemy;
+	std::vector < std::vector< char > > m_table; // Игровое поле
+	std::vector < Enemy > m_enemy; // Враги
+	std::vector < Bullet > m_bullets; // Пули
 };
 #endif

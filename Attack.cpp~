@@ -1,0 +1,10 @@
+#include<iostream>
+#include<vector>
+#include"Project.h"
+#include"enemy.h"
+Attack::Attack()
+{
+	m__x=1;
+	m__y=5;
+	m_symbols'|';
+}

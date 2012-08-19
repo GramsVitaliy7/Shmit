@@ -9,8 +9,7 @@ public:
 	int GetPosition( char type );
 	char GetSymbol();
 
-private:
-	char m_symbols;	
+private:	
 	int m_speed;
 	int m_x;
 	int m_y; 

@@ -27,7 +27,7 @@ int Bullet::GetPosition(char type) {
 }
 
 char Bullet::GetSymbol() {
-	return m_symbols;
+	return m_symbol;
 }
 
 	
