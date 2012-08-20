@@ -1,7 +1,10 @@
+
 #include "Bullet.h"
 #include "enemy.h"
-Bullet::Bullet()
+Bullet::Bullet( int iX, int iY )
 {
+	m_x = iX;
+	m_y = iY;
 	m_symbols = '|';
 	m_speed = 2;
 }
@@ -10,9 +13,9 @@ void Bullet::Move() {
 	m_x=m_x+m_speed;
 }
 
-Bullet * Laser::Shot()
-{
-	return new Bullet();	
+Bullet * Laser::Shot( int iX, int iY ) {
+	Bullet * gh = new Bullet( iX, iY );
+	return gh; 
 }
 
 int Bullet::GetPosition(char type) {
@@ -29,6 +32,7 @@ int Bullet::GetPosition(char type) {
 char Bullet::GetSymbol() {
 	return m_symbols;
 }
+
 
 	
 

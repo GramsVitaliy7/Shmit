@@ -4,21 +4,26 @@
 class Bullet
 {
 public:
-	Bullet();
+	Bullet( int iX, int iY );
 	void Move();
 	int GetPosition( char type );
 	char GetSymbol();
 
 private:
+	Bullet() {}
+
+private:
 	char m_symbols;	
 	int m_speed;
 	int m_x;
-	int m_y; 
+	int m_y;
+	void PutSymbols(); 
 };
 
 class Laser
 {
 public:
-	Bullet * Shot();
+	Bullet * Shot(int iX, int iY);
 };
+
 #endif

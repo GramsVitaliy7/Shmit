@@ -6,6 +6,7 @@
 
 #include "enemy.h"
 #include "Bullet.h"
+#include "consts.h"
 
 class World
 {
@@ -13,18 +14,17 @@ public:
 	World();
 	void Update();
 
-
 private:
 	void Draw() 
 	{
-		for(int i=0; i<35; ++i) 
+		for(int i=0; i<h; ++i) 
 		{	
-			for(int j=0; j<40; ++j)
+			for(int j=0; j<w; ++j)
 			{	
- 				std::cout<<m_table[i][j];
+ 				std::cout << m_table[i][j];
 				
 			}
-			std::cout<<std::endl;
+			std::cout << std::endl;
 		}
 		
 	}
@@ -33,6 +33,7 @@ private:
 private:
 	std::vector < std::vector< char > > m_table; // Игровое поле
 	std::vector < Enemy > m_enemy; // Враги
-	std::vector < Bullet > m_bullets; // Пули
+	std::vector < Bullet *> m_bullets; // Пули
 };
+
 #endif

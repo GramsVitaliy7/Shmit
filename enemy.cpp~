@@ -1,19 +1,30 @@
 #include <cstdlib>
+#include <iostream>
 #include "enemy.h"
 #include "Bullet.h"
+
 Enemy::Enemy()
 {
 	m_health=100;
-	m_x=0;
+	m_x=rand() % 3;
 	m_y=rand() % 30;
 	m_symbol='V';
+	m_delay = 3;
+	m_curTime = 0;
 	m_laser = new Laser();	
 }
 void Enemy::Move() {
-	m_x=m_x+1;	
+	if( m_x < h - 1 )
+		m_x=m_x+1;
+	else
+		std::cout << "Game over" << std::endl;	
 } 
-void Enemy::Shot() {
-	m_laser->Shot();
+Bullet * Enemy::Shot() {
+	if(++m_curTime == m_delay) {
+		return m_laser->Shot( m_x + 1, m_y );
+	}
+	else
+		return NULL;
 }
 void Enemy::Die() {
 } 

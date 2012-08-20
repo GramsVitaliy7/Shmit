@@ -1,8 +1,9 @@
 #include"Project.h"
 #include"enemy.h"
 #include <iostream>
-#include <time>
+#include <ctime>
 #include <cstdlib>
+
 int main() {
 srand(time(0));
 World plot;
