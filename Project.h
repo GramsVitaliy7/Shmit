@@ -7,6 +7,7 @@
 #include "enemy.h"
 #include "Bullet.h"
 #include "consts.h"
+#include "Game.h"
 
 class World
 {
@@ -34,6 +35,7 @@ private:
 	std::vector < std::vector< char > > m_table; // Игровое поле
 	std::vector < Enemy > m_enemy; // Враги
 	std::vector < Bullet *> m_bullets; // Пули
+	Game m_player; //Игрок
 };
 
 #endif

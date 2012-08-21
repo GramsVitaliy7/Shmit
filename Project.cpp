@@ -4,6 +4,7 @@
 
 #include"Project.h"
 #include"enemy.h"
+#include"Game.h"
 World::World() {
 	std::vector<char> newVect; //создаём вектор типа char
 	for(int i=0; i<w; ++i) {
@@ -37,6 +38,10 @@ void World::Update()
 		m_bullets[i]->Move();
 	}
 	
+	
+		
+	
+	
 	std::vector<char> newVect; //создаём вектор типа char
 	for(int i=0; i<w; ++i) {
 		newVect.push_back('.'); //С помощью цикла добавляем в конец вектора кл.
@@ -62,7 +67,12 @@ std::cout << "Game overss" << std::endl;
 		
 	}
 
-	
+	m_player.Move();	
+	int x = m_player.GetPosition('x'); // взять символ и координаты
+	int y = m_player.GetPosition('y'); 
+	char symbol = m_player.GetSymbol();
+	this->PutSymbol( x, y, symbol );
+
 	this->Draw();
 	
 }

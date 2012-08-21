@@ -8,7 +8,7 @@ Enemy::Enemy()
 	m_health=100;
 	m_x=rand() % 3;
 	m_y=rand() % 30;
-	m_symbol='V';
+	m_symbol ='V';
 	m_delay = 3;
 	m_curTime = 0;
 	m_laser = new Laser();	

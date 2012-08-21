@@ -21,6 +21,7 @@ void Enemy::Move() {
 } 
 Bullet * Enemy::Shot() {
 	if(++m_curTime == m_delay) {
+		m_curTime = 0;
 		return m_laser->Shot( m_x + 1, m_y );
 	}
 	else
