@@ -35,7 +35,7 @@ private:
 	std::vector < std::vector< char > > m_table; // Игровое поле
 	std::vector < Enemy > m_enemy; // Враги
 	std::vector < Bullet *> m_bullets; // Пули
-	std::vector < Game > m_player; //Игрок
+	Game m_player; //Игрок
 };
 
 #endif

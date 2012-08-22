@@ -1,5 +1,5 @@
 #include "Game.h"
-
+#include <iostream>
 Game::Game()
 {
 	p_x = 34;
@@ -8,10 +8,22 @@ Game::Game()
 	p_speed = 1;
 	p_health = 100;
 }
-void Game::Move() {
+void Game::MoveRight() {
 	p_y=p_y+p_speed;	
-	
+
 }
+void Game::MoveLeft() {
+	p_y=p_y-p_speed;
+
+}
+void Game::Fire() {
+
+}
+
+char Game::GetSymbol() {
+	return p_symbol;
+}
+
 int Game::GetPosition(char type) {
 	switch(type) {
 		case 'x':
@@ -22,7 +34,3 @@ int Game::GetPosition(char type) {
 			break;
 	}
 }
-char Game::GetSymbol() {
-	return p_symbol;
-}
-

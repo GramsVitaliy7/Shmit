@@ -1,28 +1,40 @@
 #include "Game.h"
-
+#include <iostream>
 Game::Game()
 {
-	p_x = 35;
+	p_x = 34;
 	p_y = 10;
 	p_symbol = 'A';
 	p_speed = 1;
 	p_health = 100;
 }
-void Game::Move() {
+void Game::MoveRight() {
 	p_y=p_y+p_speed;	
-	
+
 }
-int Game::GetPosition(char type) {
-	switch(type) {
-		case 'x':
-			return p_x;
-			break;
-		case 'y':
-			return p_y;
-			break;
-	}
+void Game::MoveLeft() {
+	p_y=p_y-p_speed;
+
 }
+void Game::Fire() {
+
+}
+
 char Game::GetSymbol() {
 	return p_symbol;
 }
 
+int Game::GetPosition(char type) {
+switch( command )
+{
+case 32: // space
+	this->Fire();
+	break;
+case 'a':
+	this->MoveLeft();
+	break;
+case 'd':
+	this->MoveRight();
+	break;
+}
+}

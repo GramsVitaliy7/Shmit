@@ -13,7 +13,7 @@ class World
 {
 public:
 	World();
-	void Update();
+	void Update( char command );
 
 private:
 	void Draw() 

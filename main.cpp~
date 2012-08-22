@@ -4,26 +4,26 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-
+#include <curses.h>
 int main() {
 	srand(time(0));
+	int command;
 	World plot;
 	plot.Update();
 	Game player;
-	player.Update();
 	//World * pWorld = &plot;
 	//pWorld->Draw();
 	//World object;
 	//World * pObject = &object;
 	//pObject->Draw();
-	test ship;
 for(int i=0; i<32; i++) {
-	plot.Update();
-	std::cout << std::endl;
-	usleep(500000);
-	}
-for(int i=0; i<15; i++) {
-	player.Update();
+	WINDOW * window = ::initscr();
+	::cbreak();
+	::nodelay( window, true );
+	command = ::getch();
+	::endwin();
+	std::cout << command;
+	plot.Update( command );
 	std::cout << std::endl;
 	usleep(500000);
 	}

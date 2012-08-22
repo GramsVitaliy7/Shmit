@@ -7,9 +7,12 @@ class Game
 {
 public: 
 	Game();
-	void Move();
+	void MoveRight();
+	void MoveLeft();
 	int GetPosition(char type);
 	char GetSymbol();
+	void Fire();
+	char command;
 private:	
 	int p_health;
 	int p_x;

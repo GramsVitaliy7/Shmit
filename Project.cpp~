@@ -18,7 +18,7 @@ World::World() {
 	}
 }
 
-void World::Update()
+void World::Update( char command )
 {
 	std::cout << "Game" << std::endl;	
 	for(int i=0; i<m_enemy.size(); ++i) 
@@ -57,7 +57,7 @@ void World::Update()
 		this->PutSymbol( x, y, symbol ); // в ячейку с координатами положить символ
 
 	}
-std::cout << "Game overss" << std::endl;	
+	
 
 	for(int i=0; i<m_bullets.size(); ++i) {
 		int x = m_bullets[i]->GetPosition('x'); 
@@ -67,11 +67,25 @@ std::cout << "Game overss" << std::endl;
 		
 	}
 
-	//m_player.Move();	
-	//int x = m_player.GetPosition('x'); // взять символ и координаты
-	//int y = m_player.GetPosition('y'); 
-	//char symbol = m_player.GetSymbol();
-	//this->PutSymbol( x, y, symbol );
+	
+	int x = m_player.GetPosition('x'); // взять символ и координаты
+	int y = m_player.GetPosition('y'); 
+	char symbol = m_player.GetSymbol();
+	std::cout << "Game overss" << x << " " << y <<std::endl;
+	this->PutSymbol( x, y, symbol );
+
+	switch( command )
+	{
+	case 32: // space
+		m_player.Fire();
+		break;
+	case 'a':
+		player.MoveLeft();
+		break;
+	case 'd':
+		player.MoveRight();
+		break;
+	}
 
 	this->Draw();
 	
